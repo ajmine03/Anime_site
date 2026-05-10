@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "./motion-lite";
-import { Clock3, Heart, Play, Share2, Star } from "./icons";
+import { Clock3, Heart, Play, Share2, Star    } from "./icons";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import AnimePoster from "./anime-poster";
