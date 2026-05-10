@@ -45,7 +45,7 @@ const pendingRequests: Record<string, Promise<string>> = {};
 export async function fetchAnimePoster(title: string): Promise<string> {
   const key = title.toLowerCase().trim();
   if (imageCache[key]) return imageCache[key];
-  if (pendingRequests[key]) return pendingRequests[key];
+  if (pendingRequests[key] !== undefined) return pendingRequests[key];
 
   pendingRequests[key] = (async () => {
     try {
