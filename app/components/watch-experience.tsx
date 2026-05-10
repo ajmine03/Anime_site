@@ -47,7 +47,7 @@ export default function WatchExperience({
   const currentIndex = Math.max(0, episode - 1);
   const prevEpisode = currentIndex > 0 ? seasonEpisodes[currentIndex - 1] : null;
   const nextEpisode = seasonEpisodes[currentIndex + 1];
-  const streamUrl = `/api/stream?url=${encodeURIComponent(videoUrl)}`;
+  const streamUrl = videoUrl;
   const meta = buildMeta(title, seasonEpisodes.length);
 
   const recommended = useMemo(
@@ -72,7 +72,7 @@ export default function WatchExperience({
   const playVideo = (url: string) => {
     const player = document.getElementById("main-video-player") as HTMLVideoElement;
     if (player) {
-      player.src = `/api/stream?url=${encodeURIComponent(url)}`;
+      player.src = url;
       player.load();
       player.play().catch(console.error);
     }
